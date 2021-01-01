@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FormBased/FormBased.iml" filepath="$PROJECT_DIR$/FormBased/FormBased.iml" />
       <module fileurl="file://$PROJECT_DIR$/HttpBasic/HttpBasic.iml" filepath="$PROJECT_DIR$/HttpBasic/HttpBasic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JWT/JWT.iml" filepath="$PROJECT_DIR$/JWT/JWT.iml" />
     </modules>
   </component>
 </project>

@@ -14,28 +14,22 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @RequiredArgsConstructor
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
-/*
-    private final PasswordEncoder passwordEncoder;
-*/
     private final AuthenticationProvider authenticationProvider;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) {
-        auth
-                /*.inMemoryAuthentication()
-                .withUser("admin").password(passwordEncoder.encode("123"))*//*.roles("ADMIN")*//*.authorities("ROLE_ADMIN", "ACCESS_TEST1", "ACCESS_TEST2")
-                .and()
-                .withUser("manager").password(passwordEncoder.encode("123"))*//*.roles("MANAGER")*//*.authorities("ROLE_MANAGER", "ACCESS_TEST1")
-                .and()
-                .withUser("fnkaya").password(passwordEncoder.encode("123")).roles("USER");*/
-
-                .authenticationProvider(authenticationProvider);
+        auth.authenticationProvider(authenticationProvider);
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().ignoringAntMatchers("/h2-console/**")
+                .and()
+                .headers().frameOptions().disable()
+                .and()
                 .authorizeRequests()
+                .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/index").permitAll()
                 .antMatchers("/profile/**").authenticated()
                 .antMatchers("/admin/**").hasRole("ADMIN")

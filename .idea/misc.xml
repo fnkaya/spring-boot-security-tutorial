@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/HttpBasic/pom.xml" />
         <option value="$PROJECT_DIR$/FormBased/pom.xml" />
+        <option value="$PROJECT_DIR$/JWT/pom.xml" />
       </list>
     </option>
   </component>

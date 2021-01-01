@@ -7,18 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="FormBased" />
+        <module name="JWT" />
         <module name="HttpBasic" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="FormBased" target="11" />
       <module name="HttpBasic" target="11" />
+      <module name="JWT" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="FormBased" options="-parameters" />
       <module name="HttpBasic" options="-parameters" />
+      <module name="JWT" options="-parameters" />
     </option>
   </component>
 </project>
